@@ -1,0 +1,161 @@
+//colors
+$color_white_shadow: #eee;
+$color_celeste: #ccc;
+$white: #ffffff;
+$color_black: #222222;
+$color_blue: #33B3BE;
+$black: #000000;
+$color_gray: #999999;
+
+
+
+%extend_1 {
+	background-color: $white;
+	cursor: pointer;
+	outline: none;
+}
+
+
+%extend_2 {
+	position: relative;
+	top: 0;
+	content: "";
+	display: inline-block;
+	width: 0.6em;
+	height: 0.6em;
+	border-top: 0.2em solid $color_black;
+
+	transform: rotate(-45deg);
+}
+
+
+.r-calendar {
+	background-color: $color_white_shadow;
+
+	box-shadow: 0 0 5px $color_celeste;
+	font: normal 12px Helvetica Neue, sans-serif;
+	min-width: 240px;
+	position: relative;
+	width: 100%;
+	* {
+		transition: all 0.3s linear;
+	}
+	.r-row {
+		display: flex;
+		flex-flow: row nowrap;
+		width: 100%;
+		justify-content: center;
+	}
+	.r-cell {
+		background-color: $white;
+		align-items: center;
+		display: flex;
+		flex-flow: row nowrap;
+		flex-grow: 1;
+		flex-basis: 0;
+		justify-content: center;
+		word-wrap: break-word;
+		overflow-wrap: break-word;
+		&.r-date {
+			cursor: pointer;
+			outline: none;
+			&.r-today {
+				background-color: $white;
+				border: solid 1px $color_blue;
+			}
+			&.r-selected {
+				background-color: $black;
+				border: solid 1px $black;
+				color: $white;
+			}
+			&.r-past {
+				color: $color_gray;
+				cursor: not-allowed;
+			}
+			&:not(.r-past):hover {
+				background-color: $color_blue;
+				border: solid 1px $color_blue;
+				color: $white;
+			}
+		}
+	}
+	.r-head {
+		flex-grow: 1;
+		flex-basis: 0;
+	}
+	.r-prev {
+		@extend %extend_1;
+		&:before {
+			@extend %extend_2;
+			border-left: 0.2em solid $color_black;
+			transform: rotate(-45deg);
+			margin-left: 0.3em;
+		}
+		&:hover {
+			background-color: $color_blue;
+			&:before {
+				border-left-color: $white;
+				border-top-color: $white;
+			}
+		}
+	}
+	.r-next {
+		@extend %extend_1;
+		&:before {
+			@extend %extend_2;
+			border-right: 0.2em solid $color_black;
+			transform: rotate(45deg);
+			margin-right: 0.3em;
+		}
+		&:hover {
+			background-color: $color_blue;
+			&:before {
+				border-right-color: $white;
+				border-top-color: $white;
+			}
+		}
+	}
+	.r-title {
+		flex-grow: 5;
+		flex-basis: max-content;
+	}
+	.r-weekdays {
+		flex-grow: 1;
+		flex-basis: 0;
+		.r-cell {
+			font-weight: bold;
+		}
+	}
+	.r-dates {
+		display: flex;
+		flex-flow: column nowrap;
+		flex-grow: 6;
+		flex-basis: 0;
+		&.r-fix {
+			flex-grow: 5;
+		}
+		.r-row {
+			flex-grow: 1;
+		}
+		.r-cell {
+			background-color: $white;
+			border: solid 1px $white;
+		}
+	}
+	.r-weeknum {
+		color: $color_gray;
+		font-size: 0.8em;
+	}
+	&:after {
+		content: "";
+		display: block;
+		padding-bottom: 100%;
+	}
+	.r-inner {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-flow: column nowrap;
+	}
+}

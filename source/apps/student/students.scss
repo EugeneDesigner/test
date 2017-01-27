@@ -1,0 +1,124 @@
+$main-color: #33B3BE;
+$border-color: #E2E2E2;
+$gray-color: #6F757B;
+
+
+
+.student__navigation {
+  cursor: pointer;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid $border-color;
+
+  & > * {
+    max-width: 33%;
+    margin-right: 20px;
+    transition: all .2s ease-in-out;
+  }
+  & > span {
+    border: 1px solid $border-color;
+    padding: 5px 10px;
+    font-size: 1.4em;
+
+    &:hover {
+      background-color: $main-color;
+      color:#fff;
+    }
+  }
+  div {
+    padding-bottom: 3px;
+  }
+  .create {
+    border-bottom: 2px solid $main-color;
+    color: #000;
+  }
+}
+
+article {
+  padding: 15px 10px;
+  margin-bottom: 2px;
+  overflow: hidden;
+  overflow-y: scroll;
+
+  input {
+    height: 30px;
+    font-family: FontAwesome;
+    padding-left: 5px;
+  }
+  .create-student__input {
+    margin: 20px 0;
+    display: flex;
+    flex-flow: column nowrap;
+    label {
+      margin-bottom: 7px;
+      position: relative;
+      display: block;
+      font-weight: bold;
+      font-size: .9em;
+      span {
+        margin-right: 6px;
+      }
+      div {
+        height: 4px;
+        width: 4px;
+        border-radius: 50%;
+        background-color: red;
+        display: inline-block;
+        margin-bottom: 2px;
+
+      }
+    }
+  }
+  .select-student__search {
+    width: 100%;
+    border-radius: 2px;
+    outline: 0;
+    border: 1px solid rgba($gray-color, 0.6);
+  }
+  .select-student__list {
+    display: block;
+    margin-top: 10px;
+    height: 100%;
+
+    li {
+      padding: 15px;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+      &:hover {
+        background-color: rgba($gray-color, .6);
+      }
+
+      .photo {
+        height: 40px;
+        width: 40px;
+        img {
+          border-radius: 50%;
+          height: auto;
+          width: 100%;
+        }
+      }
+      & > * {
+        margin-right: 5px;
+      }
+      .status {
+        position: absolute;
+        right: 0;
+      }
+    }
+  }
+
+}
+
+#create-student {
+  display: block;
+
+}
+
+#select-student {
+  display: none;
+}

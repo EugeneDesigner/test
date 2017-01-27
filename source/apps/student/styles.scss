@@ -1,0 +1,107 @@
+@import "schedule.scss";
+@import "students.scss";
+
+@keyframes fadeInDownBig {
+	0% {
+		opacity: 0;
+		transform: translateY(-1000px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.fadeInDownBig {
+	  animation: fadeInDownBig .5s ease-in;
+}
+
+#window {
+  height: 100vh;
+  width: 100vw;
+  background-color: #4E5860;
+  opacity: .9;
+  z-index: 2;
+  position: absolute;
+  display: block;
+}
+.intro-button {
+  height: 60px;
+  width: 200px;
+  background-color: #33B3BE;
+  position: absolute;
+  top: 30%;
+  left: 60px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 4px;
+  outline: 0;
+  font-size: 1.5em;
+  color: #fff;
+  letter-spacing: .1em;
+  z-index: 1;
+}
+.pop_new {
+  position: absolute;
+  background-color: #fff;
+  width: 320px;
+  height: 350px;
+  right: 0;
+  left: 0;
+  opacity: 1;
+  margin: 0 auto;
+  color: #4B5259;
+  border-radius: 3px;
+  z-index: 3;
+  top: 20%;
+
+
+
+section {
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+    ul {
+      margin-left: 0;
+      padding-left: 0;
+      li {
+        list-style: none;
+      }
+    }
+  }
+}
+
+.form__button {
+
+  button {
+    width: 100%;
+    height: 40px;
+    color: #fff;
+    background-color: $main-color;
+    border: 0;
+    outline: 0;
+    transition: all .1s ease-in;
+    transform: translateY(0px);
+
+
+
+    &:hover {
+      background-color: darken($main-color, 10%);
+    }
+
+    &:active {
+      transform: translateY(2px);
+    }
+
+  }
+
+}
+
+.disabled {
+  button {
+    opacity: .5;
+		margin-top: 15px;
+  }
+
+}

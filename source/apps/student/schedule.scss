@@ -1,0 +1,222 @@
+$main-color: #33B3BE;
+$border-color: #E2E2E2;
+$gray-color: #AEB5BC;
+$text-color: #4B5259;
+
+
+.schedule {
+  color: #4B5259;
+  font-size: 1.1em;
+  position: relative;
+  .countTime {
+    width: 45px;
+    font-size: .9em;
+    position: absolute;
+    background-color: #fff;
+    top: 29%;
+    max-height: 150px;
+    right: 30.5%;
+    z-index: 3;
+    overflow-y: scroll;
+    padding: 1px;
+    display: none;
+
+    li {
+      display: block;
+      padding: 7px 8px 7px 3px;
+      cursor: pointer;
+    }
+    li:hover {
+      background-color: $main-color;
+      color: #fff;
+    }
+  }
+  .schedule__icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #AFB6BD;
+    font-size: 1.3em;
+
+
+    &:hover {
+      color: #000;
+    }
+  }
+  & > div {
+    min-height: 19%;
+    margin: 0 10px;
+  }
+  .schedule__title {
+    padding: 15px 0px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    p {
+      display: inline-block;
+    }
+  }
+
+  .schedule__time {
+    margin: 0;
+    padding: 15px 0;
+    background-color: #F8F8F8;
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+      &--clock {
+      color: $gray-color;
+      padding-top: 4px;
+      margin-right: 20px;
+      span {
+        font-size: 1.4em;
+      }
+    }
+    &--date {
+      position: relative;
+      .calendar {
+        position: absolute;
+        display: none;
+        z-index: 10;
+        top: 55%;
+      }
+    }
+
+    ul {
+      width: 100%;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+
+    }
+    li {
+      width: 50%;
+      padding-left: 10px;
+
+      display: flex;
+      flex-flow: row nowrap;
+      &:first-child {
+        border-right: 1px solid rgba($gray-color, .7);
+      }
+      &:last-child {
+        padding-left: 15px;
+        span {
+          color: $gray-color;
+          padding: 0 10px;
+          font-size: .8em
+        }
+
+      }
+      p {
+        margin-left: 3px;
+        font-size: .9em;
+        color: $gray-color;
+        padding: 1px 2px;
+
+      }
+    }
+
+    .date, .time, .period {
+      background-color: transparent;
+      outline: 0;
+      max-width: 45px;
+      text-align: center;
+      color: $main-color;
+      cursor: pointer;
+      border: 0;
+      font-size: .9em;
+      border-radius: 4px;
+      padding: 2px 1px;
+    }
+    .period {
+      color: $gray-color;
+      font-size: .9em;
+      width: 100px;
+      padding: 0px;
+      margin-left: -4px;
+      line-height: 12px;
+    }
+    .time {
+      width: 35px;
+    }
+    .changing {
+      background-color: #B5BBC2;
+      color: #fff;
+    }
+
+  }
+  .schedule__student {
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px 0px;
+    justify-content: left;
+    & > *:not(:first-child) {
+      margin-left: 3px;
+    }
+
+    &--user {
+      color: $gray-color;
+      margin-right: 20px;
+      font-size: 1.2em;
+    }
+    &--image {
+      height: 34px;
+      width: 34px;
+      border-radius: 50%;
+      margin-right: 5px;
+    }
+    &--profile {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+    }
+
+  }
+
+  .schedule__lesson {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+
+    div {
+      width: 50%;
+    }
+
+    label {
+        cursor: pointer;
+    }
+    .label-text {
+      font-size: 1.1em;
+    }
+    input[type="radio"] {
+      display: none;
+    }
+    input[type="radio"] + .label-text:before {
+      content: "\f1db";
+      font-family: "FontAwesome";
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      width: 1em;
+      display: inline-flex;
+      margin-right: 10px;
+    }
+
+    input[type="radio"]:checked + .label-text:before {
+      content: "\f28d";
+      color: $main-color;
+    }
+
+
+
+  }
+
+
+}

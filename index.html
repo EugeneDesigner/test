@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="shv">
+
+    <!-- Styles -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <link href="./public/common.css" rel="stylesheet">
+    <link href="./public/student.css" rel="stylesheet">
+
+    <title>Preply</title>
+
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+        <div class="container" id="appContainer"></div>
+
+
+
+    <script>
+        window.App = window.App || {};
+        window.App.Data = window.App.Data || {};
+        window.App.Enums = window.App.Enums || {};
+    </script>
+
+    <script>
+        App.Data.Preloading = {
+
+            Students: [
+                {id: 1, name: "Elizabeth Taylor", image: 'source/common/images/5.jpg', hours: '3 hours', invited: false, email: ''},
+                {id: 2, name: "Rachel Smith", image: 'source/common/images/6.jpg', hours: '2 hours', invited: false, email: ''},
+                {id: 3, name: "Tony McGregor", image: 'source/common/images/invited.png', hours: '1 hour', invited: true, email: ''},
+                {id: 4, name: "Anthony Cutcher", image: 'source/common/images/1.jpg', hours: '4 hours', invited: false, email: ''},
+                {id: 5, name: "Rikel McGregor", image: 'source/common/images/2.jpg', hours: '5 hours', invited: false, email: ''},
+                {id: 6, name: "Lilly Barns", image: 'source/common/images/8.jpg', hours: '23 hours', invited: false, email: ''},
+                {id: 7, name: "Anthony Hopkins", image: 'source/common/images/3.jpg', hours: '14 hours', invited: false, email: ''},
+                {id: 8, name: "Sonic", image: 'source/common/images/4.jpg', hours: '8 hours', invited: false, email: ''},
+                {id: 9, name: "Anton", image: 'source/common/images/invited.png', hours: '1 hour', invited: false, email: ''}
+            ]
+        };
+    </script>
+
+    <script src="./public/common.js"></script>
+    <script src="./public/student.js"></script>
+</html>

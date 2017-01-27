@@ -1,0 +1,24 @@
+.suplan {
+    .push,
+    .footer {
+        height: 60px;
+    }
+
+    .footer {
+        background-color: rgb(41, 41, 41);
+        color: rgb(135, 135, 135);
+    }
+
+    .l-local {
+        cursor: pointer;
+        text-decoration: none;
+
+        &:hover {
+            border-bottom: 1px dashed #1f85c5;
+        }
+    }
+
+    .row--moreMarginBottom {
+        margin-bottom: 20px;
+    }
+}
